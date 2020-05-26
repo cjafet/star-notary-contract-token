@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StarNotary DAPP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+    .padding {
+          padding: 0px 15px;
+          height: 280px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>StarNotary Token DAPP</h1>
+      <br/>
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#create">Create a Star</a></li>
+        <li><a data-toggle="tab" href="#lookup">Look up a Star</a></li>
+        <li><a data-toggle="tab" href="#owner">Star Owner</a></li>
+        <li><a data-toggle="tab" href="#exchange">Exchange Stars</a></li>
+        <li><a data-toggle="tab" href="#transfer">Transfer Star</a></li>
+      </ul>
+      <div class="tab-content">
+          <div id="create" class="tab-pane fade in active padding">
+            <h2>Create a Star</h2>
+            <br><label for="starName">Star Name:</label><input type="text" id="starName"></input>
+            <br><label for="starId">Star ID:</label><input type="text" id="starId"></input>
+            <br><br><button id="createStar" onclick="App.createStar()">Create Star</button>
+            <br>
+          </div>
+          <div id="lookup" class="tab-pane fade padding">
+            <h2>Look up a Star</h2>
+            <br><label for="lookid">Star ID:</label><input type="text" id="lookid"></input>
+            <br><br><button onclick="App.lookUp()">Look Up a Star</button>
+          </div>
+          <div id="owner" class="tab-pane fade padding">
+            <h2>Star Owner</h2>
+            <br><label for="tokenId">Star ID:</label><input type="text" id="tokenId"></input>
+            <br><br><button onclick="App.ownerOf()">Get Star Owner</button>
+          </div>
+          <div id="exchange" class="tab-pane fade padding">
+            <h2>Exchange Stars</h2>
+            <br><label for="tokenId1">Token ID 1:</label><input type="text" id="tokenId1"></input>
+            <br><label for="tokenId2">Token ID 2:</label><input type="text" id="tokenId2"></input>
+            <br><br><button onclick="App.exchangeStars()">Exchange Stars</button>
+            <br>
+          </div>
+          <div id="transfer" class="tab-pane fade padding">
+            <h2>Transfer Star</h2>
+            <br><label for="address">Address:</label><input type="text" id="address"></input>
+            <br><label for="token">Token ID:</label><input type="text" id="token"></input>
+            <br><br><button onclick="App.transferStar()">Transfer Star</button>
+            <br>
+          </div>
+          <hr>
+          <span id="status"></span>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
